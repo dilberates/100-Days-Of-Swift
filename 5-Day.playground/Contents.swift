@@ -120,4 +120,24 @@ do {
 } catch {
     print("You can't use that password.")
 }
-//error için do try catch kullanılmalı. 
+//error için do try catch kullanılmalı. do, try, ve catch swifte özgü.
+
+//----------inout parameters--------
+
+//inoutçünkü değiştirilebilirler
+func doubleInPlace(number: inout Int) {
+    number *= 2
+}
+var myNum = 10
+doubleInPlace(number: &myNum)
+
+/*Bu serinin beşinci bölümünün sonuna geldiniz, o halde özetleyelim:
+ 
+ İşlevler, kendimizi tekrar etmeden kodu yeniden kullanmamıza izin verir.
+ İşlevler parametreleri kabul edebilir - Swift'e her parametrenin türünü söylemeniz yeterlidir.
+ İşlevler değer döndürebilir ve yine siz sadece hangi türün geri gönderileceğini belirtirsiniz. Birkaç şeyi döndürmek istiyorsanız tuples kullanın.
+ Harici ve dahili olarak parametreler için farklı adlar kullanabilir veya harici adı tamamen atlayabilirsiniz.
+ Parametreler, belirli değerler yaygın olduğunda daha az kod yazmanıza yardımcı olan varsayılan değerlere sahip olabilir.
+ Değişken işlevler belirli bir parametrenin sıfırını veya daha fazlasını kabul eder ve Swift, girişi bir diziye dönüştürür.
+ İşlevler hata verebilir, ancak bunları kullanarak çağırmanız tryve hataları kullanarak işlemeniz gerekir catch.
+ Bir işlev içindeki değişkenleri değiştirmek için kullanabilirsiniz inout, ancak genellikle yeni bir değer döndürmek daha iyidir.*/
