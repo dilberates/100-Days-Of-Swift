@@ -61,7 +61,55 @@ func sayHello(to name: String) {
 }
 sayHello(to: "Taylor")
 
+/*Swift, her parametre için iki ad vermemize izin verir: biri işlev çağrılırken harici olarak, diğeri ise işlevin içinde dahili olarak kullanılır. Bu, bir boşlukla ayrılmış iki isim yazmak kadar basittir.*/
+
 func setAge(for person: String, to value: Int) {
     print("\(person) is now \(value)")
 }
 setAge(for: "Paul", to: 40)
+
+//--------------Omitting parameter labels---------
+
+/*Çağırdığımızda aslında herhangi bir parametre adı göndermediğimizi fark etmişsinizdir - yerine print()diyoruz .print("Hello")print(message: "Hello")
+ 
+ _Harici parametre adınız için bir alt çizgi ( ) kullanarak kendi işlevlerinizde de aynı davranışı elde edebilirsiniz , bunun gibi:*/
+func greet(_ person: String) {
+    print("Hello, \(person)!")
+}
+greet("Taylor")
+
+//----------Default parameters--------
+func greet2(_ person: String, nicely: Bool = true) {
+    if nicely == true {
+        print("Hello, \(person)!")
+    } else {
+        print("Oh no, it's \(person) again...")
+    }
+}
+
+greet2("Taylor")
+greet2("Taylor", nicely: false)
+
+//----------Variadic functions--------------
+func square(numbers: Int...) {
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+square(numbers: 1, 2, 3, 4, 5,10)
+
+/*...Herhangi bir parametreyi tipinden sonra yazarak değişken yapabilirsiniz . Dolayısıyla, bir Intparametre tek bir tam sayıdır, oysa Int...sıfır veya daha fazla tam sayıdır - potansiyel olarak yüzlerce.*/
+
+//---------------Writing throwing functions--------
+enum PasswordError: Error {
+    case obvious
+}
+func checkPassword(_ password: String) throws -> Bool {
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+
+    return true
+}
+
+try checkPassword("password")
