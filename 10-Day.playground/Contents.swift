@@ -43,3 +43,59 @@ class Book: Product {
         super.init(name: name)
     }
 }
+//Using super init as two keywords is not allowed.
+
+//-------Overriding methods--------
+
+class Cat{
+    func makeNoise(){
+        print("meow")
+    }
+}
+
+
+class See:Cat{
+    override func makeNoise() {
+        print("yes")
+    }
+}
+
+let see=See()
+see.makeNoise()
+
+//-------Final classes------
+//bir sınıfı başka hiç bir sınıf miras almasın istediğimizde sınıfın önüne koyarız.
+
+final class dilber{
+    var name:String
+    var surname:String
+    init(name:String,surname:String){
+        self.name=name
+        self.surname=surname
+    }
+}
+
+//class jnDilber :dilber{}
+
+
+//--------Copying objects-------
+//3-Struclar kopyalandığında orjinal struct a bir şey olmaz ama sınıflarda böyle değildir.
+class Singer{
+    var name="Taylor Swift"
+}
+var singer=Singer()
+print(singer.name)
+
+var singerCopy=singer
+singerCopy.name="Selena Gomez"
+
+print(singer.name)
+
+
+class Persons{
+    var name:"Dilber ATEŞ"
+    init(){
+        print("\(name)" is alive)
+    }
+    deinit
+}
