@@ -93,9 +93,23 @@ print(singer.name)
 
 
 class Persons{
-    var name:"Dilber ATEŞ"
+    var name="Dilber ATEŞ"
     init(){
-        print("\(name)" is alive)
+        print("\(name) is alive")
     }
-    deinit
+    func printGreeting(){
+        print("hello")
+    }
+    deinit{
+        print("\(name) is no more")
+    }
 }
+
+for _ in 1...3 {
+    let person=Persons()
+    person.printGreeting()
+}
+
+//---------Mutability-------
+//mutanting needed with structs.
+//Sınıflarda değişmesini istemediğim değişkenleri let ile ayarlarız.
