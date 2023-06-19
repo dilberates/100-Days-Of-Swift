@@ -89,4 +89,45 @@ print("OK!")
 
 //-------------Failable initializers--------
 
+struct Employee {
+    var username: String
+    var password: String
+
+    init?(username: String, password: String) {
+        guard password.count >= 8 else { return nil }
+        guard password.lowercased() != "password" else { return nil }
+
+        self.username = username
+        self.password = password
+    }
+}
+
+//------Typecasting -------
+class Animal { }
+class Fish: Animal { }
+
+class Dog: Animal {
+    func makeNoise() {
+        print("Woof!")
+    }
+}
+let pets = [Fish(), Dog(), Fish(), Dog()]
+for pet in pets {
+    if let dog = pet as? Dog {
+        dog.makeNoise()
+    }
+}
+
+/*Bu serinin onuncu bölümünün sonuna geldiniz, o halde özetleyelim:
+ 
+ Seçenekler, bir değerin yokluğunu açık ve net bir şekilde temsil etmemizi sağlar.
+ if letSwift, options kullanarak veya kullanarak paketlerini açmadan kullanmamıza izin vermiyor guard let.
+ Paketi açma seçeneklerini bir ünlem işaretiyle zorlayabilirsiniz, ancak paketi açmaya zorlarsanız nilkodunuz çöker.
+ Örtülü olarak açılmış isteğe bağlı seçenekler, normal isteğe bağlı seçeneklerin güvenlik kontrollerine sahip değildir.
+ İsteğe bağlı bir paketi açmak ve içinde hiçbir şey yoksa varsayılan bir değer sağlamak için nil birleştirme kullanabilirsiniz.
+ İsteğe bağlı zincirleme, isteğe bağlı olanı işlemek için kod yazmamıza izin verir, ancak isteğe bağlı boş çıkarsa kod yoksayılır.
+ try?Bir fırlatma işlevini isteğe bağlı bir dönüş değerine dönüştürmek veya try!bir hata atılırsa çökmek için kullanabilirsiniz .
+ Hatalı girdi verildiğinde başlatıcınızın başarısız olmasına ihtiyacınız varsa, init?()başarısız bir başlatıcı yapmak için kullanın.
+ Bir tür nesneyi diğerine dönüştürmek için tip belirlemeyi kullanabilirsiniz.*/
+
 
