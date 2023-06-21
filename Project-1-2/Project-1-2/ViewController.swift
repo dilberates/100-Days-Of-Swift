@@ -13,7 +13,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() { //ekran yüklendiğinde
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        title="Storm View"
+        navigationController?.navigationBar.prefersLargeTitles=true
         let fm=FileManager.default //Dosya sistemiyle çalışmamaıza izin verir.
         let path=Bundle.main.resourcePath! //Uygulamaya eklediğim resimlşer hangi pathde
         let items=try! fm.contentsOfDirectory(atPath: path) //bu dosya  bu path
