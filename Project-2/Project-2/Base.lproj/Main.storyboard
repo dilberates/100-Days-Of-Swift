@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--vb -->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="vb " id="BYZ-38-t0r" customClass="ViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="france"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2s-Z4-6QF">
-                                <rect key="frame" x="95" y="377" width="224" height="114"/>
+                                <rect key="frame" x="95" y="355" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="estonia"/>
                             </button>
@@ -36,7 +36,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XZS-gp-gU0" firstAttribute="centerX" secondItem="ENo-51-jPC" secondAttribute="centerX" id="Bc4-GB-EeV"/>
-                            <constraint firstItem="s2s-Z4-6QF" firstAttribute="top" secondItem="XZS-gp-gU0" secondAttribute="bottom" constant="30" id="SDh-4z-7bP"/>
+                            <constraint firstItem="s2s-Z4-6QF" firstAttribute="top" secondItem="XZS-gp-gU0" secondAttribute="bottom" constant="8" symbolic="YES" id="SDh-4z-7bP"/>
                             <constraint firstItem="s2s-Z4-6QF" firstAttribute="centerX" secondItem="XZS-gp-gU0" secondAttribute="centerX" id="eCH-xV-zSq"/>
                             <constraint firstItem="ENo-51-jPC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="m6B-40-K1Y"/>
                             <constraint firstItem="XZS-gp-gU0" firstAttribute="top" secondItem="ENo-51-jPC" secondAttribute="bottom" constant="8" symbolic="YES" id="n7J-A0-ie3"/>
