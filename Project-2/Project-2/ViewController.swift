@@ -11,10 +11,13 @@ class ViewController: UIViewController {
 
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
+    @IBOutlet var label1: UILabel!
     @IBOutlet var button3: UIButton!
     
     var countries=[String]()
     var score=0
+    var correctAnswer=0
+    var count=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +53,46 @@ class ViewController: UIViewController {
         
     }
     
-    func askQuestion(){
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title:String
+        
+        if sender.tag == correctAnswer{
+            title="Correct answer."
+            score+=1
+        }else{
+            title="Wrong! That’s the flag of \(countries[sender.tag])"
+            score-=1
+        }
+        
+        count+=1
+        print(count)
+        
+        let ac=UIAlertController(title: title, message: "Your score: \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default,handler: askQuestion))
+        
+        let ac2=UIAlertController(title: "\(title) \n Game Over!", message: "Your score: \(score)", preferredStyle: .alert)
+        ac2.addAction(UIAlertAction(title: "Continue", style: .default,handler: askQuestion))
+        
+       
+        
+        if count==10{
+            present(ac2,animated: true)
+            count=0
+        }else{
+            present(ac, animated: true)
+            
+        }
+    }
+    func askQuestion(action: UIAlertAction!=nil){
         
         //Swifte dizileri karıştırmak için shuffle fonksiyonu kullanılır.
         countries.shuffle()
-        
+        correctAnswer=Int.random(in: 0...2) //hangi ülkeyi soracağını random seçiyoruz.
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
+        
+        self.navigationItem.title=countries[correctAnswer].uppercased() //title değeri bu rastgele gelmiş olan şehrin adı olarak yazılıyor.
     }
 
 

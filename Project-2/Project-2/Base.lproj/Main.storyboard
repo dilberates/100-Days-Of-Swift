@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xc7-AS-sqb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -11,48 +11,68 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZS-gp-gU0">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZS-gp-gU0">
                                 <rect key="frame" x="95" y="233" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="france"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pza-qt-brP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2s-Z4-6QF">
-                                <rect key="frame" x="95" y="377" width="224" height="114"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2s-Z4-6QF">
+                                <rect key="frame" x="95" y="353" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="estonia"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FWA-Nv-U5k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-51-jPC">
                                 <rect key="frame" x="95" y="111" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mys-SP-PVd"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6e-B7-Mnt">
+                                <rect key="frame" x="173" y="475" width="42" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XZS-gp-gU0" firstAttribute="centerX" secondItem="ENo-51-jPC" secondAttribute="centerX" id="Bc4-GB-EeV"/>
-                            <constraint firstItem="s2s-Z4-6QF" firstAttribute="top" secondItem="XZS-gp-gU0" secondAttribute="bottom" constant="30" id="SDh-4z-7bP"/>
+                            <constraint firstItem="M6e-B7-Mnt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="173" id="NWM-X1-2gR"/>
+                            <constraint firstItem="M6e-B7-Mnt" firstAttribute="top" secondItem="s2s-Z4-6QF" secondAttribute="bottom" constant="8" symbolic="YES" id="QZ3-k8-Gdg"/>
+                            <constraint firstItem="s2s-Z4-6QF" firstAttribute="top" secondItem="XZS-gp-gU0" secondAttribute="bottom" constant="6" id="SDh-4z-7bP"/>
                             <constraint firstItem="s2s-Z4-6QF" firstAttribute="centerX" secondItem="XZS-gp-gU0" secondAttribute="centerX" id="eCH-xV-zSq"/>
                             <constraint firstItem="ENo-51-jPC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="m6B-40-K1Y"/>
                             <constraint firstItem="XZS-gp-gU0" firstAttribute="top" secondItem="ENo-51-jPC" secondAttribute="bottom" constant="8" symbolic="YES" id="n7J-A0-ie3"/>
                             <constraint firstItem="ENo-51-jPC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="pMt-aK-CWV"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="kUF-7P-svj"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="button1" destination="ENo-51-jPC" id="yn8-5F-qyi"/>
                         <outlet property="button2" destination="XZS-gp-gU0" id="P4P-Wr-uLH"/>
                         <outlet property="button3" destination="s2s-Z4-6QF" id="lRA-85-nTN"/>
+                        <outlet property="label1" destination="M6e-B7-Mnt" id="Tov-K4-1ec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026.7175572519084" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1026.0869565217392" y="3.3482142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IWf-cN-Oi2">
