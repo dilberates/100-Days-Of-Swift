@@ -92,7 +92,15 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        self.navigationItem.title=countries[correctAnswer].uppercased() //title değeri bu rastgele gelmiş olan şehrin adı olarak yazılıyor.
+        self.navigationItem.title=countries[correctAnswer].uppercased()
+        
+        self.navigationItem.rightBarButtonItem=UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action:#selector(showScore) )//title değeri bu rastgele gelmiş olan şehrin adı olarak yazılıyor.
+    }
+    
+    @objc func showScore(){
+        let ac=UIAlertController(title: "Your score:", message: "\(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default,handler: askQuestion))
+        present(ac,animated: true)
     }
 
 
